@@ -1,0 +1,82 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+		<link rel="stylesheet" type="text/css" href="{% static 'register/css/prod.css'%}">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'register/css/maincss.css'%}">
+        <style>
+      
+			div {
+				border-radius: 5px;
+				background-color: #eeeeee;
+				padding: 20px;
+			  }
+			.img{
+				background-position: center;
+				background-size: cover;
+				width: 900px;
+				height: 800px;
+			}
+        </style>
+  </head>
+
+<body  class="main" >
+	
+<!-- home section starts  -->
+
+  <br>		
+  <!---for boxs 🔽 -->
+  
+	<div class="row">
+
+	<div>
+				<center>
+
+		<img class="img" src="{% static  'register\image\logo1.png' %}">
+	</center>
+
+	</div>
+	<hr>
+
+		{% for product in products %}
+<div class="col-lg-4">
+<center>
+
+	<img class="thumbnail" src="{{product.image.url}}">
+	<div class="box-element product">
+	<h2 ><strong>{{product.name}}</strong></h2>
+	<hr>
+	
+	<button data-product=" {{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+	<h4 style="display: inline-block;"><strong>{{product.price|floatformat:2}}SAR</strong></h4>
+</div>
+</center>
+
+
+			</div>
+	
+			{% endfor %}
+	
+		  </div>
+		  <script type="text/javascript">
+			(function(d, m){
+				var kommunicateSettings = 
+					{"appId":"3188a84c8fcebbb84fe1d4f0cf5c02ed8","popupWidget":true,"automaticChatOpenOnNavigation":true};
+				var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+				s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+				var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+				window.kommunicate = m; m._globals = kommunicateSettings;
+			})(document, window.kommunicate || {});
+		/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+		</script>
+	
+	
+    
+</body>
+{% endblock %}
+
+
+
+ 

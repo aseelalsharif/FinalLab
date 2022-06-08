@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>  
+<link rel="stylesheet" href="{% static 'register/css/Contact.css'%}" >
+</head>
+<body>
+<div class="Contact">
+  <h2 style="font-family:'Poppins','sans-serif';">Contact Us</h2>
+  <form method="POST" action=" {% url 'contactUs' %} ">
+    {% csrf_token %}
+    <label for="fname" style="font-family:'Poppins','sans-serif';"> Your Name</label>
+    <input class="Contact" type="text" id="fname" name="firstname" placeholder="Your Full Name">
+
+ 	<label for="email"  style="font-family:'Poppins','sans-serif';">enter your email</label>
+    <input class="Contact" type="text" id="email" name="email" placeholder="email">
+
+ <label for="subject" style="font-family:'Poppins','sans-serif';"> subject</label>
+    <input class="Contact" type="text" id="subject" name="subject" placeholder="subject">
+
+    <label for="massage"  style="font-family:'Poppins','sans-serif';">Your Message</label>
+    <textarea class="Contact" type="text" id="massage" name="massage" rows="4" cols="20" >
+
+    </textarea>
+    <input class="Contact" type="submit" value="Submit">
+
+  </form>
+</div>
+<script type="text/javascript">
+  (function(d, m){
+      var kommunicateSettings = 
+          {"appId":"3188a84c8fcebbb84fe1d4f0cf5c02ed8","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+  })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+</body>
+</html>
+
+
+  {% endblock  %}

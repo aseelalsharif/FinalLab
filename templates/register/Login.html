@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="stylesheet" href="{% static 'register/css/Style1.css'%}" >
+<title>
+
+</title>
+
+</head>
+<body>
+<section>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+                 <img class="rounded float-right" src ="{% static 'register\image\logo- بدون خلفية-02-05.png' %}" width='1000' height='1000'>     
+              <form id="Login" action="{% url 'Login' %}" method='POST'>{% csrf_token %} <h2>Login to Your Account</h2>
+                {{form}}
+
+             
+ 
+                  <button class="w-100 btn btn-lg btn-primary" id="loginSignUp"onclick="document.getElementById('Login').submit();">Login</button>
+                 <p>Click here to create an account </br> <a href="{% url 'Sign Up' %}"><u>Sign Up here</u></a></p></div>
+
+               
+                
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+
+
+{% endblock %}

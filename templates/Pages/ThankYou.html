@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+ {% block content%}
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+body{
+  background: #eeeeee;
+}
+h1{
+font-family: 'Poppins','sans-serif';
+padding: 50px;
+font-size:70px;
+color: #714d69;
+text-align: center;
+}
+</style>
+<h1>THANK YOU FOR MESSAGING US</h1>
+<script type="text/javascript">
+  (function(d, m){
+      var kommunicateSettings = 
+          {"appId":"3188a84c8fcebbb84fe1d4f0cf5c02ed8","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+  })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+</body>
+</html>
+
+ {% endblock  %}
