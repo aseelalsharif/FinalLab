@@ -34,7 +34,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 </head>
 <body class="w3-light-grey w3-content" style="max-width:1000px">
-<h1> Here at Azoooni Organic WebSite</h1>
+<h1> {{ Content.main_title }}</h1>
 <br>
 
 <!-- Top menu on small screens -->
@@ -51,28 +51,29 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Photo grid -->
   <div class="w3-row">
-    <div class="w3-third">
-      <img class="Homep" src="https://i.ibb.co/X7xG1Q6/ch10.jpg" style="width:100%" onclick="onClick(this)" >
-      <img class="Homep" src="https://i.ibb.co/NVRJdgJ/ch11.jpg" style="width:100%" onclick="onClick(this)">
-
+    <div class="w3-row">
+      <div class="w3-third">
+        <img src="{{ Content.image1.url }}" style="width:100%" onclick="onClick(this)" >
+        <img src="{{ Content.image4.url }}"style="width:100%" onclick="onClick(this)">
+  
+      </div>
+  
+      <div class="w3-third">
+        <img src="{{ Content.image2.url }}" style="width:100%" onclick="onClick(this)" >
+        <img src="{{ Content.image5.url}}" style="width:100%" onclick="onClick(this)" >
+  
+      </div>
+  
+      <div class="w3-third">
+        <img src="{{ Content.image3.url }}" style="width:100%" onclick="onClick(this)" >
+        <img src="{{ Content.image6.url }}" style="width:100%" onclick="onClick(this)" >
+  
+      </div>
     </div>
+      <br>
+  <p class="lead">{{ Content.sub_title }}</p>
 
-    <div class="w3-third">
-      <img class="Homep" src="https://i.ibb.co/5FjJPvs/ch3.jpg" style="width:100%" onclick="onClick(this)" >
-      <img class="Homep" src="https://i.ibb.co/dQtQykn/ch7.jpg" style="width:100%" onclick="onClick(this)" >
-
-    </div>
-
-    <div class="w3-third">
-      <img class="Homep" src="https://i.ibb.co/KKnFY1s/ch4.jpg" style="width:100%" onclick="onClick(this)" >
-      <img class="Homep" src="https://i.ibb.co/QPWBJ8q/ch6.jpg" style="width:100%" onclick="onClick(this)" >
-
-    </div>
-  </div>
-    <br>
-<p class="lead">We're of the mindset that life's not worth living without dessert but not any dessert , its an organic dessert </p>
-    <a href ="#" class="nav-link px-2 link-secondary" style="background-color:#cec3c8; text-align: center;">SHOP NOW</a>
-
+      <a href ="{% url 'products'%}" class="nav-link px-2 link-secondary" style="background-color:#cec3c8; text-align: center;">SHOP NOW</a>
     <script type="text/javascript">
       (function(d, m){
           var kommunicateSettings = 

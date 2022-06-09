@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . models import Contact
+from . models import Home
 # Create your views here.
 
 
@@ -14,10 +15,12 @@ def contactUs(request):
         v_contact.save()
         return render(request, 'Pages/ThankYou.html')
     else:
-        return render(request,'Pages/contact.html')
+        return render(request,'Pages/Contact.html')
 
 def home(request):
-    return render(request,'Pages/Home.html')
+    Content = Home.objects.all().first()
+
+    return render(request,'Pages/Home.html', {'Content': Content})
 
 def About(request):
     return render(request,'Pages/About.html')

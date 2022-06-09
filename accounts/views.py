@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.forms import UserCreationForm #this to create a new user
+from django.contrib import messages
 from . forms import SignUpForm
 # Create your views here.
 
